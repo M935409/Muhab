@@ -29,17 +29,26 @@
         }
         .image-container img {
             width: 100%;  /* الصورة تأخذ عرض الشاشة الكامل */
-            max-width: 600px; /* تحديد الحد الأقصى لعرض الصورة */
+            max-width: 100%; /* تأكد أن الصورة تغطي كامل عرض الشاشة */
+            height: auto; /* الحفاظ على نسبة الأبعاد */
             display: block;
             margin: auto;
             border-radius: 10px;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+        }
+        /* الفاصل بين الصورة الأولى والصورة الثانية */
+        .separator {
+            width: 100%;
+            height: 4px;
+            background-color: black; /* اللون الأسود */
+            margin: 20px 0;  /* الفاصل بين الصور */
         }
         /* استعلام وسائط لتحسين التصميم للجوال */
         @media (max-width: 768px) {
             .image-container img {
                 width: 100%;  /* الصورة ستأخذ العرض الكامل للجوال */
                 max-width: 100%;  /* تأكيد أن الصورة لا تتجاوز العرض */
+                height: auto;  /* الحفاظ على الأبعاد الأصلية للصورة */
                 margin-bottom: 15px;  /* إضافة مسافة بين الصور */
             }
 
@@ -49,6 +58,35 @@
 
             h2 {
                 font-size: 18px;  /* تقليل حجم العنوان على الجوال */
+            }
+        }
+
+        /* استعلام وسائط لتحسين التصميم على الأجهزة الكبيرة */
+        @media (min-width: 769px) {
+            .image-container img {
+                max-width: 100%; /* جعل الصور أكبر من الجوال */
+            }
+        }
+
+        /* تنسيق التوقيع في الأسفل */
+        footer {
+            font-size: 30px;
+            font-weight: bold;
+            color: orange;
+            text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow;
+            margin-top: 20px;
+            animation: fire 1.5s infinite alternate;
+        }
+
+        /* تأثير النار */
+        @keyframes fire {
+            0% {
+                text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow;
+                color: orange;
+            }
+            100% {
+                text-shadow: 0 0 15px red, 0 0 25px orange, 0 0 35px yellow;
+                color: red;
             }
         }
     </style>
@@ -68,10 +106,14 @@
         <div class="image-container">
             <img src="WhatsApp Image 2025-03-23 at 2.40.24 AM.jpeg" alt="صفحة 1 من PDF">
         </div>
+        
+        <!-- الفاصل بين الصورة الأولى والصورة الثانية -->
+        <div class="separator"></div>
+        
         <div class="image-container">
             <img src="898908ب.jpeg" alt="صفحة 2 من PDF">
         </div>
-
+        <div class="separator"></div>
         <div class="image-container">
             <img src="لخمخ53345.jpeg" alt="صفحة 3 من PDF">
         </div>
@@ -79,7 +121,7 @@
         <div class="image-container">
             <img src="cgyi34768.jpeg" alt="صفحة 4 من PDF">
         </div>
-
+        <div class="separator"></div>
         <div class="image-container">
             <img src="ieut999.jpeg" alt="صفحة 5 من PDF">
         </div>
@@ -87,7 +129,7 @@
         <div class="image-container">
             <img src="tyrtyr.jpeg" alt="صفحة 6 من PDF">
         </div>
-
+        <div class="separator"></div>
         <div class="image-container">
             <img src="321111.jpeg" alt="صفحة 7 من PDF">
         </div>
@@ -95,7 +137,7 @@
         <div class="image-container">
             <img src="عتنم11.jpeg" alt="صفحة 8 من PDF">
         </div>
-
+        <div class="separator"></div>
         <div class="image-container">
             <img src="ققق4.jpeg" alt="صفحة 9 من PDF">
         </div>
@@ -103,7 +145,7 @@
         <div class="image-container">
             <img src="0000.jpeg" alt="صفحة 10 من PDF">
         </div>
-
+        <div class="separator"></div>
         <div class="image-container">
             <img src="1111.jpeg" alt="صفحة 11 من PDF">
         </div>
@@ -111,11 +153,16 @@
         <div class="image-container">
             <img src="3333.jpeg" alt="صفحة 12 من PDF">
         </div>
-
+        <div class="separator"></div>
         <div class="image-container">
             <img src="5555.jpeg" alt="صفحة 13 من PDF">
         </div>
     </div>
+
+    <!-- التوقيع في أسفل الصفحة -->
+    <footer>
+        By : Muhab
+    </footer>
 
 </body>
 </html>
