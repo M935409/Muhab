@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المجموعة 10</title>
+    <!-- إضافة مكتبة AOS لتأثيرات التمرير -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,26 +64,86 @@
             }
         }
 
-      /* تنسيق اللوجو داخل مربع بيضاوي */
+        @keyframes flyBounce {
+    0% { transform: translateY(0); }
+    40% { transform: translateY(-200px); animation-timing-function: ease-out; } /* صعود بطيء */
+    60% { transform: translateY(10px); animation-timing-function: ease-in; } /* سقوط سريع */
+    70% { transform: translateY(-5px); } /* ارتداد بسيط */
+    80% { transform: translateY(0); }
+    85% { transform: translateY(3px); } /* اهتزاز خفيف */
+    90% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes dustEffect {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(2); }
+}
+
+@keyframes crackEffect {
+    0% { transform: scaleX(0); opacity: 0; }
+    50% { transform: scaleX(1.2); opacity: 1; }
+    100% { transform: scaleX(1.5); opacity: 0; }
+}
+
+/* تأثير تموج الألوان للإطار */
+@keyframes borderWave {
+    0% { border-color: #ff6f61; }
+    25% { border-color: #ffcc00; }
+    50% { border-color: #32cd32; }
+    75% { border-color: #0066ff; }
+    100% { border-color: #ff6f61; }
+}
+
 .logo-container {
     width: 150px;
     height: 150px;
     margin: auto;
     border-radius: 50%;
-    background: radial-gradient(circle, #ff6f61, #ffffff, #32cd32); /* تدرج لوني دائري */
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     margin-bottom: 20px;
+    position: relative;
+    overflow: visible;
+    
+    /* جعل الإطار متموج */
+    border: 5px solid;
+    animation: borderWave 3s infinite linear;
 }
+
 .logo-container img {
     width: 80%;
     height: auto;
     border-radius: 50%;
+    position: absolute;
+    animation: flyBounce 3s infinite;
 }
 
+/* تأثير الغبار */
+.dust {
+    position: absolute;
+    bottom: -5px;
+    width: 60px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(150, 150, 150, 0.7), rgba(0, 0, 0, 0));
+    opacity: 0;
+    animation: dustEffect 0.5s ease-out infinite;
+}
 
+/* تأثير التشقق */
+.crack {
+    position: absolute;
+    bottom: -10px;
+    width: 80px;
+    height: 10px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+    opacity: 0;
+    transform-origin: center;
+    animation: crackEffect 0.5s ease-out infinite;
+}
     </style>
 </head>
 <body>
@@ -98,69 +160,68 @@
     <footer style="font-size: 24px; font-family: 'Arial', sans-serif; text-decoration: underline; text-decoration-color: #000000; margin-bottom: 10px;">
         Batch 11 it
     </footer>
-    
 
-    <div class="container">
+    <div class="container" data-aos="fade-up">
         <h2>Excel ملف</h2>
-        <div class="image-container">
+        <div class="image-container" data-aos="zoom-in">
             <img src="758754.png" alt="صفحة Excel">
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" data-aos="fade-up">
         <h2>PDF ملف</h2>
 
-        <div class="image-container">
+        <div class="image-container" data-aos="fade-right">
             <img src="WhatsApp Image 2025-03-23 at 2.40.24 AM.jpeg" alt="صفحة 1 من PDF">
         </div>
         
         <div class="separator"></div>
         
-        <div class="image-container">
+        <div class="image-container" data-aos="fade-left">
             <img src="898908ب.jpeg" alt="صفحة 2 من PDF">
         </div>
         <div class="separator"></div>
-        <div class="image-container">
+        <div class="image-container" data-aos="fade-right">
             <img src="لخمخ53345.jpeg" alt="صفحة 3 من PDF">
         </div>
 
-        <div class="image-container">
+        <div class="image-container" data-aos="zoom-in">
             <img src="cgyi34768.jpeg" alt="صفحة 4 من PDF">
         </div>
         <div class="separator"></div>
-        <div class="image-container">
+        <div class="image-container" data-aos="zoom-in">
             <img src="ieut999.jpeg" alt="صفحة 5 من PDF">
         </div>
 
-        <div class="image-container">
+        <div class="image-container" data-aos="fade-left">
             <img src="tyrtyr.jpeg" alt="صفحة 6 من PDF">
         </div>
         <div class="separator"></div>
-        <div class="image-container">
+        <div class="image-container" data-aos="fade-up">
             <img src="321111.jpeg" alt="صفحة 7 من PDF">
         </div>
 
-        <div class="image-container">
+        <div class="image-container" data-aos="fade-right">
             <img src="عتنم11.jpeg" alt="صفحة 8 من PDF">
         </div>
         <div class="separator"></div>
-        <div class="image-container">
+        <div class="image-container" data-aos="fade-left">
             <img src="ققق4.jpeg" alt="صفحة 9 من PDF">
         </div>
 
-        <div class="image-container">
+        <div class="image-container" data-aos="zoom-in">
             <img src="0000.jpeg" alt="صفحة 10 من PDF">
         </div>
         <div class="separator"></div>
-        <div class="image-container">
+        <div class="image-container" data-aos="fade-up">
             <img src="1111.jpeg" alt="صفحة 11 من PDF">
         </div>
 
-        <div class="image-container">
+        <div class="image-container" data-aos="zoom-in">
             <img src="3333.jpeg" alt="صفحة 12 من PDF">
         </div>
         <div class="separator"></div>
-        <div class="image-container">
+        <div class="image-container" data-aos="fade-right">
             <img src="5555.jpeg" alt="صفحة 13 من PDF">
         </div>
     </div>
@@ -168,6 +229,17 @@
     <footer>
         تصميم : مهاب طارق
     </footer>
+
+    <!-- إضافة مكتبة AOS الخاصة بالتأثيرات -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // تفعيل AOS
+        AOS.init({
+            duration: 1000,  // مدة التأثير
+            easing: 'ease-in-out',  // طريقة التدرج
+            once: true  // تفعيل التأثير لمرة واحدة فقط
+        });
+    </script>
 
 </body>
 </html>
